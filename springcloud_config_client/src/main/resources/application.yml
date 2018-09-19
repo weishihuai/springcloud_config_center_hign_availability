@@ -1,0 +1,4 @@
+#忽略权限拦截
+management:
+  security:
+    enabled: false

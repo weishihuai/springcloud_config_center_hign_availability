@@ -1,0 +1,27 @@
+#配置注册到eureka服务注册中心的地址
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+#端口号
+server:
+  port: 2222
+#  port: 4444
+#应用名称
+spring:
+  application:
+    name: hign-availability-config-server
+  cloud:
+    config:
+      server:
+        git:
+          #git远程仓库地址
+          uri: https://github.com/weishihuai/SpringCloudConfig/
+          #访问git仓库的用户名(公开仓库不需要配置用户名和密码，私有仓库才需要配置)
+          username: weishihuai
+          #访问git仓库的密码
+          password: wsh775334252
+          #git仓库配置文件的路径
+          search-paths: repository
+      #git仓库分支(默认master)
+      label: master

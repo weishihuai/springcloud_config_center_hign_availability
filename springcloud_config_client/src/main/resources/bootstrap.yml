@@ -1,0 +1,21 @@
+server:
+  port: 3333
+#注意application-name(配置文件前缀)需要对应git仓库中 config-client-dev、config-client-test、config-client-prod为名称的配置文件
+spring:
+  application:
+    name: config-client
+  cloud:
+    config:
+      #指定当前所属环境
+      profile: prod
+      discovery:
+        #开启通过服务访问config-server的功能
+        enabled: true
+        #指定配置中心注册到eureka的serviceId(即config-server的application-name)
+        serviceId: hign-availability-config-server
+      #git仓库分支
+      label: master
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
